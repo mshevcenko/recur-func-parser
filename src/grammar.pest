@@ -1,0 +1,11 @@
+WHITESPACE = _{" " | NEWLINE}
+integer = { ASCII_DIGIT+ }
+identifier = @{ ASCII_ALPHA ~ (ASCII_DIGIT | ASCII_ALPHA)* }
+zero = { "z" }
+successor = { "s" }
+projection = @{ "p" ~ integer ~ "." ~ integer }
+composition = { "(" ~ recursive_function ~ ":" ~ recursive_function ~ ("," ~ recursive_function)* ~ ")" }
+primitive = { "[" ~ recursive_function ~ "," ~ recursive_function ~ "]" }
+minimization = { "{" ~ recursive_function ~ "," ~ integer ~ "}" }
+recursive_function = {  zero | successor | projection | composition | primitive | minimization | identifier }
+functions = { SOI ~ (identifier ~ "=" ~ recursive_function ~ ";")+ ~ EOI }

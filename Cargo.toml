@@ -1,0 +1,11 @@
+[package]
+name = "math-expr-parser"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "general recursive function parser"
+
+[dependencies]
+anyhow = "1.0.93"
+pest = "2.7.14"
+pest_derive = "2.7.14"
