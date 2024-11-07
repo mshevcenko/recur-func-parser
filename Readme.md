@@ -7,14 +7,14 @@ Anyone will be able to practice creating a general recursive function using this
 For more information about general recursive function: 
  - https://en.wikipedia.org/wiki/General_recursive_function
 
-zero function mark: "z"
-successor function mark: "s"
-projection function mark: "p<\argument number>.<\argument quantity>"
-composition function mark: "(<\func> : <\func>, ... , <\func>)"
-primitive function mark: "[<\func> , <\func>]"
-minimization function mark: "{<\func> , <\integer>}"
+zero function mark: "z"  
+successor function mark: "s"  
+projection function mark: "p<argument number>.<argument quantity>"  
+composition function mark: "(<func> : <func>, ... , <func>)"  
+primitive function mark: "[<func> , <func>]"  
+minimization function mark: "{<func> , <integer>}"  
 
-Example of recursive function: "addition = [p1.1, (s:p3.3)];"
-Expected use case:
-    Input: addition 1 3
-    Output: 4
+Example of recursive function: "addition = [p1.1, (s:p3.3)];"  
+Expected use case:  
+    Input: addition 1 3  
+    Output: 4  
