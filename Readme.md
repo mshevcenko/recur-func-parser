@@ -9,12 +9,12 @@ For more information about general recursive function:
 
 zero function mark: "z"  
 successor function mark: "s"  
-projection function mark: "p<argument number>.<argument quantity>"  
-composition function mark: "(<func> : <func>, ... , <func>)"  
-primitive function mark: "[<func> , <func>]"  
-minimization function mark: "{<func> , <integer>}"  
+projection function mark: "p&lt;argument number&gt;.&lt;argument quantity&gt;"  
+composition function mark: "(&lt;func&gt; : &lt;func&gt;, ... , &lt;func&gt;)"  
+primitive function mark: "[&lt;func&gt; , &lt;func&gt;]"  
+minimization function mark: "{&lt;func&gt; , &lt;integer&gt;}"  
 
 Example of recursive function: "addition = [p1.1, (s:p3.3)];"  
 Expected use case:  
-    Input: addition 1 3  
-    Output: 4  
+&emsp;Input: addition 1 3  
+&emsp;Output: 4  
