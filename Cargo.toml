@@ -1,11 +1,15 @@
 [package]
-name = "math-expr-parser"
+name = "recur-func-parser"
+description = "parser for general/partial recursive functions and their execution"
+authors = ["Mykhailo Shevchenko <mh.shevchenko@ukma.edu.ua>"]
+repository = "https://github.com/mshevcenko/recur-func-parser.git"
+readme = "README.md"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "general recursive function parser"
 
 [dependencies]
 anyhow = "1.0.93"
 pest = "2.7.14"
 pest_derive = "2.7.14"
+thiserror = "2.0.3"

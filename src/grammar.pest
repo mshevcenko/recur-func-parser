@@ -1,11 +1,26 @@
-WHITESPACE = _{" " | NEWLINE}
-integer = { ASCII_DIGIT+ }
+//! Grammar rules for parsing recursive functions.
+
+/// Rule which matches whitespaces: space, newline, tab.
+WHITESPACE = _{ " " | NEWLINE | "\t" }
+/// Rule which matches integers.
+integer = @{ ASCII_DIGIT+ }
+/// Rule which matches identifiers. They must start with letter and contain only letters or numbers.
 identifier = @{ ASCII_ALPHA ~ (ASCII_DIGIT | ASCII_ALPHA)* }
-zero = { "z" }
-successor = { "s" }
-projection = @{ "p" ~ integer ~ "." ~ integer }
+/// Rule which matches simple recursive function zero.
+zero = { "$z" }
+/// Rule which matches simple recursive function successor.
+successor = { "$s" }
+/// Rule which matches simple recursive function projection.
+projection = ${ "$p" ~ integer ~ "." ~ integer }
+/// Rule which matches recursive function compostion. Example: ($s:$p3.3).
 composition = { "(" ~ recursive_function ~ ":" ~ recursive_function ~ ("," ~ recursive_function)* ~ ")" }
+/// Rule which matches primitive recursive function. Example: [$p1.1, ($s:$p3.3)].
 primitive = { "[" ~ recursive_function ~ "," ~ recursive_function ~ "]" }
+/// Rule which matches minimization recursive function. Example: {subtractionAbs3, 100 }.
 minimization = { "{" ~ recursive_function ~ "," ~ integer ~ "}" }
-recursive_function = {  zero | successor | projection | composition | primitive | minimization | identifier }
+/// Rule which matches all possible recursive functions: zero, successor, projection, composition, primitive, minimization or identifier for identifying its function in future.
+recursive_function = { zero | successor | projection | identifier | composition | primitive | minimization }
+/// Rule which matches list of recursive functions with their identifiers separated by semicolon. Example: const0 = $z; const0v2  = ($z : $p2.1);.
 functions = { SOI ~ (identifier ~ "=" ~ recursive_function ~ ";")+ ~ EOI }
+/// Rule which matches query to execute it contains identifier of function and arguments for calculations. Example:addition 12 57.
+query = { SOI ~ identifier ~ integer* ~ EOI }

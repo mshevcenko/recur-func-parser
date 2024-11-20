@@ -1,0 +1,14 @@
+const0 = $z;
+const0v2  = ($z : $p2.1);
+const0v3 = ($z:$p3.1);
+const1v2 = ($s : ($z : $p2.1));
+const2= ($s:($s:$z));
+addition = [$p1.1, ($s:$p3.3)];
+multiplication = [$z , (addition: $p3.3,$p3.1)];
+notSignum = [($s:$z),($z:$p2.1)];
+subtract1 = [$z,$p2.1];
+subtraction = [$p1.1, (subtract1:$p3.3)];
+subtractionRev = (subtraction : $p2.2, $p2.1);
+subtractionAbs = (addition: subtraction, subtractionRev);
+subtractionAbs3=(subtractionAbs:$p3.1, (addition:$p3.2,$p3.3));
+subtractionPart = {subtractionAbs3, 100 };
