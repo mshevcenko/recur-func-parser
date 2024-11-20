@@ -3,9 +3,9 @@
 ## General information
 
 Repository:
- - https://github.com/mshevcenko/recur-func-parser.git
+ - https://github.com/mshevcenko/recur-func-parser.git  
 Crate:
- - https://crates.io/crates/recur-func-parser
+ - https://crates.io/crates/recur-func-parser  
 Documentation:
  - https://docs.rs/recur-func-parser/latest/recur_func_parser/index.html
 
